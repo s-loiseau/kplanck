@@ -4,13 +4,14 @@
 #define CLALT LALT_T(KC_MINS)
 #define CTAB LGUI_T(KC_TAB)
 #define CBSLS LGUI_T(KC_BSLS)
+#define CBSPC LGUI_T(KC_BSPC)
 #define CESC LCTL_T(KC_ESC)
 #define CQUO RCTL_T(KC_QUOT)
 #define CNON LSFT_T(KC_GRV)
 #define CGRV LSFT_T(KC_GRV)
 #define CENT RSFT_T(KC_ENTER)
 
-#define CLOW LT(_LW, KC_INS)
+#define CLOW LT(_LW, KC_BSLS)
 #define CRAI LT(_RS, KC_LBRC)
 
 
@@ -33,20 +34,20 @@
  * |       |       |       |       |       |       |       |   ;   |       |       |       |       |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
  * | vold  |volu   |       | mute  | Alt   | Lower |       | Ralt  | Raise |       |       | rst   |
- * | left  |right  | up    | down  |  -    |  ins  |Space  |   =   |   [   |   ]   |  DEL  | BSPC  |
+ * | left  |right  | up    | down  |  -    |   \   |Space  |   =   |   [   |   ]   |  DEL  | INS   |
  * |       |       |       |       |       |       |       |       |       |       |       |       |
  * `-----------------------------------------------------------------------------------------------'
  */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QW] = LAYOUT_planck_grid(
-CTAB,     KC_Q,    KC_W,    KC_E,    KC_R,     KC_T, \
-KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,     CBSLS, \
-CESC,     KC_A,    KC_S,    KC_D,    KC_F,     KC_G, \
-KC_H,     KC_J,    KC_K,    KC_L,    KC_SCLN,  CQUO, \
-CGRV,     KC_Z,    KC_X,    KC_C,    KC_V,     KC_B, \
-KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  CENT, \
-KC_LEFT,  KC_RIGHT,  KC_UP,   KC_DOWN, CLALT,    CLOW, \
-KC_SPACE, CRALT,   CRAI,    KC_RBRC,  KC_DEL,   KC_BSPC \
+CTAB,     KC_Q,     KC_W,    KC_E,    KC_R,    KC_T, \
+KC_Y,     KC_U,     KC_I,    KC_O,    KC_P,    CBSPC, \
+CESC,     KC_A,     KC_S,    KC_D,    KC_F,    KC_G, \
+KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, CQUO, \
+CGRV,     KC_Z,     KC_X,    KC_C,    KC_V,    KC_B, \
+KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, CENT, \
+KC_LEFT,  KC_DOWN, KC_UP, KC_RIGHT,   CLALT,   CLOW, \
+KC_SPACE, CRALT,    CRAI,    KC_RBRC, KC_DEL,  KC_INS \
 ),
 
 [_LW] = LAYOUT_planck_grid(
@@ -54,8 +55,8 @@ _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,   KC_PERC, \
 KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,  _______, \
 _______, KC_1,    KC_2,    KC_3,    KC_4,     KC_5,    \
 KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     _______, \
-_______, KC_NUBS, _______, _______, _______,  _______, \
-KC_EQL,  KC_SCLN, _______, _______, _______,  _______, \
+_______, KC_NUBS, _______, KC_EQL,  KC_MINS,  KC_LBRC, \
+KC_RBRC, KC_SCLN, _______, _______, _______,  _______, \
 _______, _______, _______, _______, _______,  _______, \
 _______, _______, _______, _______, _______,  _______ \
 ),

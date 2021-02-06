@@ -14,6 +14,7 @@
 #define CLOW LT(_LW, KC_BSLS)
 #define CRAI LT(_RS, KC_SPACE)
 
+#define CSPC LSFT_T(KC_SPACE)
 
 #define _QW  0
 #define _RS  1
@@ -21,20 +22,20 @@
 
 /* Qwerty
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * | WIN   |       | pgdn  | up    | pgup  |       |       |  del  |     ^ |     ç |prscrn | win   |
- * | TAB   |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |  \  à |
+ * | WIN   |  F1   |       |       |       |       |       |  PGDN |  UP ^ | PGUP  |prscrn | win   |
+ * | TAB   |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |  DEL  |
  * |       |   !   |   @   |   #   |   $   |   $   |   ^ ? |   &   |   *   |   (   |   )   |       |
  * |-------+-------+-------+-------+-------+---------------+-------+-------+-------+-------+-------|
- * | CTL   | home  | left  | down  | right | end   |  f1   |  f2   |  f3   |  f4   |  f5   |  f6   |
+ * | CTL   |       |       |       |       |       | HOME  |  LEFT |  DOWN |  RIGH |  END  |       |
  * | ESC   |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   ;   |  "  é |
  * |       |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |       |
  * |-------+-------+-------+-------+-------+-------|-------+-------+-------+-------+-------+-------|
- * |       |   *   |   *   |   *   |   *   |       |  f7   |  f8   |  f9   |  f10  |  f11  | f12   |
+ * |       |       |       |       |  F12  |       |       |       |       |       |       |       |
  * |Sftns `|   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   / é |SftEtr |
  * |       |   <   |       |   =   |   -   |   [   |   ]   |   ;   |       |       |       |       |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
  * | vold  |volu   |       | mute  | Alt   | Lower |Raise  | Ralt  |       |       |       | rst   |
- * | left  |right  | up    | down  |  -    |   \   |Space  |   =   |   [   |   ]   |  DEL  | INS   |
+ * | left  |right  | up    | down  |  -    |   \ \ |Space  |   =   |   [   |   ]   |  DEL  | INS   |
  * |       |       |       |       |       |       |       |       |       |       |       |       |
  * `-----------------------------------------------------------------------------------------------'
  */
@@ -58,7 +59,7 @@ KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     _______, \
 _______, KC_NUBS, _______, KC_EQL,  KC_MINS,  KC_LBRC, \
 KC_RBRC, KC_SCLN, _______, _______, _______,  _______, \
 _______, _______, _______, _______, _______,  _______, \
-_______, _______, _______, _______, _______,  _______ \
+CSPC,    _______, _______, _______, _______,  _______ \
 ),
 
 [_RS] = LAYOUT_planck_grid(
@@ -78,6 +79,8 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
         case CLOW:
             return true;
         case CRAI:
+            return true;
+        case CSPC:
             return true;
         default:
             return false;

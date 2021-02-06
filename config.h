@@ -3,4 +3,8 @@
 #define MUSIC_MASK (keycode != KC_NO)
 #define FORCE_NKRO 1
 #define PREVENT_STUCK_MODIFIERS
+
 #define TAPPING_TERM 190
+
+#define RETRO_TAPPING
+#define RETRO_TAPPING_PER_KEY

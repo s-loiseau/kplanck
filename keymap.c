@@ -12,7 +12,7 @@
 #define CENT RSFT_T(KC_ENTER)
 
 #define CLOW LT(_LW, KC_BSLS)
-#define CRAI LT(_RS, KC_LBRC)
+#define CRAI LT(_RS, KC_SPACE)
 
 
 #define _QW  0
@@ -31,9 +31,9 @@
  * |-------+-------+-------+-------+-------+-------|-------+-------+-------+-------+-------+-------|
  * |       |   *   |   *   |   *   |   *   |       |  f7   |  f8   |  f9   |  f10  |  f11  | f12   |
  * |Sftns `|   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   / é |SftEtr |
- * |       |       |       |       |       |       |       |   ;   |       |       |       |       |
+ * |       |   <   |       |   =   |   -   |   [   |   ]   |   ;   |       |       |       |       |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * | vold  |volu   |       | mute  | Alt   | Lower |       | Ralt  | Raise |       |       | rst   |
+ * | vold  |volu   |       | mute  | Alt   | Lower |Raise  | Ralt  |       |       |       | rst   |
  * | left  |right  | up    | down  |  -    |   \   |Space  |   =   |   [   |   ]   |  DEL  | INS   |
  * |       |       |       |       |       |       |       |       |       |       |       |       |
  * `-----------------------------------------------------------------------------------------------'
@@ -47,7 +47,7 @@ KC_H,     KC_J,     KC_K,    KC_L,    KC_SCLN, CQUO, \
 CGRV,     KC_Z,     KC_X,    KC_C,    KC_V,    KC_B, \
 KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH, CENT, \
 KC_LEFT,  KC_DOWN, KC_UP, KC_RIGHT,   CLALT,   CLOW, \
-KC_SPACE, CRALT,    CRAI,    KC_RBRC, KC_DEL,  KC_INS \
+CRAI, CRALT,    KC_LBRC,    KC_RBRC, KC_DEL,  KC_INS \
 ),
 
 [_LW] = LAYOUT_planck_grid(
@@ -69,6 +69,17 @@ KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,    KC_F6,  \
 _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, \
 KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12, \
 KC_VOLD, KC_VOLU, XXXXXXX, KC_MUTE, _______,  _______, \
-_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RESET \
+_______, _______, XXXXXXX, XXXXXXX, XXXXXXX,  RESET \
 )
 };
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CLOW:
+            return true;
+        case CRAI:
+            return true;
+        default:
+            return false;
+    }
+}

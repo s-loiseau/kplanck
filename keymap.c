@@ -62,14 +62,14 @@ _______, _______, _______, _______, _______,  _______ \
 ),
 
 [_RS] = LAYOUT_planck_grid(
-_______, XXXXXXX, KC_PGDN, KC_UP,   KC_PGUP,  XXXXXXX, \
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,  XXXXXXX, \
-_______, KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_END,  \
-KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,    KC_F6,  \
-_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, \
-KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12, \
-KC_VOLD, KC_VOLU, XXXXXXX, KC_MUTE, _______,  _______, \
-_______, _______, XXXXXXX, XXXXXXX, XXXXXXX,  RESET \
+_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, \
+XXXXXXX, KC_PGDN, KC_UP,   KC_PGUP, KC_PSCR, _______, \
+_______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______, \
+KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_END, _______, \
+_______, KC_F9,   KC_F10,  KC_F11,   KC_F12, _______, \
+_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+KC_VOLD, KC_VOLU, XXXXXXX, KC_MUTE, _______, _______, \
+_______, _______, XXXXXXX, XXXXXXX, XXXXXXX, RESET \
 )
 };
 

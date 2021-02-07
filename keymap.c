@@ -1,21 +1,30 @@
 #include QMK_KEYBOARD_H
 
+/* ALT */
 #define CRALT RALT_T(KC_EQL)
 #define CLALT LALT_T(KC_MINS)
+
+/* GUI */
 #define CTAB LGUI_T(KC_TAB)
 #define CBSLS LGUI_T(KC_BSLS)
 #define CBSPC LGUI_T(KC_BSPC)
+
+/* CTL */
 #define CESC LCTL_T(KC_ESC)
 #define CQUO RCTL_T(KC_QUOT)
-#define CNON LSFT_T(KC_GRV)
+
+/* SHIFT */
 #define CGRV LSFT_T(KC_GRV)
 #define CENT RSFT_T(KC_ENTER)
 
+/* Shift hold, space tap : used on layer _LW allow to use number row for symbols */
+#define CSPC LSFT_T(KC_SPACE)
+
+/* LT layer */
 #define CLOW LT(_LW, KC_BSLS)
 #define CRAI LT(_RS, KC_SPACE)
 
-#define CSPC LSFT_T(KC_SPACE)
-
+/* Layers */
 #define _QW  0
 #define _RS  1
 #define _LW  2
@@ -35,7 +44,7 @@
  * |       |   <   |       |   =   |   -   |   [   |   ]   |   ;   |       |       |       |       |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
  * | vold  |volu   |       | mute  | Alt   | Lower |Raise  | Ralt  |       |       |       | rst   |
- * | left  |right  | up    | down  |  -    |   \ \ |Space  |   =   |   [   |   ]   |  DEL  | INS   |
+ * | left  |right  | up    | down  |  -    |   \   |Space  |   =   |   [   |   ]   |  DEL  | INS   |
  * |       |       |       |       |       |       |       |       |       |       |       |       |
  * `-----------------------------------------------------------------------------------------------'
  */
@@ -74,6 +83,8 @@ _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, RESET \
 )
 };
 
+/* retro_tapping_per_key */
+/* avoid shift/enter to return enter each time */
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case CLOW:
